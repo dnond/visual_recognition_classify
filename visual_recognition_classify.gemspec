@@ -1,11 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'visual_recognition_classify/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "visual_recognition_classify"
-  spec.version       = VisualRecognitionClassify::VERSION
+  spec.version       = "0.1"
   spec.authors       = ["dnond"]
   spec.email         = ["tarosuk@gmail.com"]
 
@@ -27,11 +26,13 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "patron"
+  spec.add_dependency "curb"
   spec.add_dependency "thor"
+  spec.add_dependency "addressable"
 
   spec.add_development_dependency "bundler", "~> 1.12"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "pry"
+  spec.add_development_dependency "pry-byebug"
 end
